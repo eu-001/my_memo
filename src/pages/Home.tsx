@@ -19,8 +19,20 @@ const Home: React.FC = () => {
     setBindString("바뀐 바인딩 문자열");
     alert(`bind_string : ${bind_string}`);
   }
-  const handleChange = async () => {}
-  const handlesubmit = async () => {}
+  const handleChange = async (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> ) => {
+    const {name,value} =e?.target;
+    setProduct(prev=>{
+      if(name == 'price'){
+      return{...prev,price:Number(value)} as Product;
+
+      }
+      return{...prev,[name]:value,} as Product;
+    });
+
+  }
+  const handlesubmit = async () => {
+    
+  }
 
   return (
     <>
@@ -61,10 +73,8 @@ const Home: React.FC = () => {
           </div>
         </form>
       </div>
-      <button
-        className=""
-        onClick={testfunc1}>
-        테스트
+      <button type="submit">
+        저장
       </button>
 
     </>
