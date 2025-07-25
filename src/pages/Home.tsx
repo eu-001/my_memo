@@ -11,8 +11,29 @@ const Home: React.FC = () => {
   let normal_string = "시스템 문자열";
   const [bind_string, setBindString] = useState<string>("바인딩 문자열");
   const [product, setProduct] = useState<Product>({} as Product);
+  const [samplenumber, setsamplenumber] = useState<number[]>([1, 2, 3, 4, 5]);
+  const [productlist, setProductlist] = useState<Product[]>([] as Product[]);
+  useEffect(() => {
+    const sampleData: Product[] = [
+      {
+        title: "샘플 상품 1",
+        price: 1000,
+        content: "이건 첫 번째 샘플 상품입니다.",
+      },
+      {
+        title: "샘플 상품 2",
+        price: 2000,
+        content: "이건 두 번째 샘플 상품입니다.",
+      },
+      {
+        title: "샘플 상품 3",
+        price: 3000,
+        content: "이건 세 번째 샘플 상품입니다.",
+      },
+    ];
 
-  useEffect(() => {}, []);
+    setProductlist(sampleData);
+  }, []);
 
   const testfunc1 = async () => {
     normal_string = "바뀐 시스템 문자열";
@@ -71,7 +92,16 @@ const Home: React.FC = () => {
               name="title"
               onChange={handleChange}
             />
+            {!product?.title ? (
+              <>
+                <div> 이름을 입력해 주세요</div>
+              </>
+            ) : (
+              <></>
+            )}
+            {!product?.title && <div>이름을 입력해주세요-2</div>}
           </div>
+          <br />
           <div>
             <label>가격</label>
             <input
@@ -89,9 +119,36 @@ const Home: React.FC = () => {
               rows={5}
             />
           </div>
+          <button type="submit">저장</button>
         </form>
       </div>
-      <button type="submit">저장</button>
+
+      <div>
+        <br />
+        <ul>
+          {samplenumber.map((item, index) => (
+            <li>
+              index:{index},item:{item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h2>상품 목록</h2>
+        {productlist.length > 0 ? (
+          <ul>
+            {productlist.map((item, index) => (
+              <li key={index}>
+                <strong>{item.title}</strong> - 가격: {item.price}원 / 내용:{" "}
+                {item.content}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div>상품이 없어요 😢</div>
+        )}
+      </div>
     </>
   );
 };
