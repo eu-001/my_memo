@@ -9,7 +9,7 @@ const Test1: React.FC = () => {
       let response: any = await axios
         .get("http://localhost:3001/api/test1")
       console.log(`## response:`, Response)
-      response = response?.data
+      response = response?.data?.data
       console.log(`## response.data:`, Response)
     } catch (error:any) {
 
