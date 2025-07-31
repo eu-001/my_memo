@@ -16,6 +16,7 @@ const Test1: React.FC = () => {
     }
   }
   useEffect(()=>{
+    fetchData();
   },[]);
 
   return (
