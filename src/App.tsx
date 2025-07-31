@@ -9,6 +9,7 @@ import MemoEditorV3 from "./pages/MemoEditorV3";
 import MemoDetail from "./pages/MemoDetail";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Test1 from "./pages/test1";
 import "@toast-ui/editor/dist/toastui-editor.css";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/memo_detail" element={<MemoDetail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/test1" element={<Test1 />} />
         </Route>
       </Routes>
     </BrowserRouter>
