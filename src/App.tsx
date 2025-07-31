@@ -9,7 +9,7 @@ import MemoEditorV3 from "./pages/MemoEditorV3";
 import MemoDetail from "./pages/MemoDetail";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Test1 from "./pages/test1";
+import Test1 from "./pages/Test1";
 import "@toast-ui/editor/dist/toastui-editor.css";
 
 function App() {

@@ -3,11 +3,9 @@ import axios from "axios";
 import { useAuthStore } from "../store/authStore";
 import { useNavigate } from "react-router-dom";
 
-const test1: React.FC = () => {
-  useEffect(()=>{
-    alert("welcome")
-  },[])
+const Test1: React.FC = () => {
 
+  useEffect(()=>{},[])
   return (
     <div>
       <div></div>
@@ -15,4 +13,4 @@ const test1: React.FC = () => {
   );
 };
 
-export default test1;
+export default Test1;

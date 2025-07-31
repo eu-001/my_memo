@@ -59,7 +59,7 @@ const Header: React.FC = () => {
 
       <nav className="menu-row">
         <Link to="/">홈</Link>
-        <Link to="/todo_list">TodoList</Link>
+        <Link to="/test1">Test1</Link>
         <Link to="/memo_editorv3">메모작성</Link>
       </nav>
     </header>
